@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karthikeyan &amp; Nandhini – Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Hind:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EA; --bg2:#F3E9D2; --ink:#3A0B14; --muted:#7A5A4E;
+  --maroon:#5B0F1B; --gold:#B8801C; --leaf:#2F5D3A; --card:#FFFDF7; --line:#E0CFA6;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#2A0910;--bg2:#36101A;--ink:#F7ECD3;--muted:#CDB48F;--maroon:#F0C46A;--gold:#E3B04B;--leaf:#8FC49A;--card:#3A111C;--line:#6B3A2C}
+}
+:root[data-theme="dark"]{--bg:#2A0910;--bg2:#36101A;--ink:#F7ECD3;--muted:#CDB48F;--maroon:#F0C46A;--gold:#E3B04B;--leaf:#8FC49A;--card:#3A111C;--line:#6B3A2C}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Hind,system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;gap:clamp(14px,3vw,34px);
+  padding:calc(12px + env(safe-area-inset-top,0px)) 16px 12px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);
+  font-size:.92rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);transition:color .3s}
+nav a:hover{color:var(--maroon)}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:110px 20px 70px;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 38%,var(--bg2),var(--bg) 70%)}
+.toran{position:absolute;top:56px;left:0;width:100%;height:70px;pointer-events:none}
+.toran .leaf{transform-origin:50% 0;animation:sway 4s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(5deg)}}
+.kolam{width:min(300px,64vw);margin:0 auto 10px;display:block}
+.kolam path{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+  animation:draw 2.6s cubic-bezier(.6,.1,.3,1) forwards;animation-delay:calc(var(--i)*.14s)}
+.kolam circle{fill:var(--maroon);opacity:0;animation:pop .5s ease forwards;animation-delay:calc(var(--i)*.03s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:.9}}
+.shloka{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.15rem;opacity:0;animation:fade 1.4s 2.4s forwards}
+.names{font-size:clamp(2.5rem,8.5vw,5.8rem);color:var(--maroon);letter-spacing:.01em;margin:.15em 0 .05em;opacity:0;animation:rise 1.4s 2.2s forwards}
+.names span{display:inline-block;font-style:italic;color:var(--gold);margin:0 .12em}
+.date{font-size:1.15rem;opacity:0;animation:fade 1.4s 3s forwards}
+.place{color:var(--muted);opacity:0;animation:fade 1.4s 3.2s forwards}
+@keyframes fade{to{opacity:1}}
+@keyframes rise{from{transform:translateY(18px)}to{opacity:1;transform:none}}
+.count{display:flex;justify-content:center;gap:clamp(12px,3vw,28px);margin-top:34px;opacity:0;animation:fade 1.4s 3.4s forwards}
+.count div{min-width:70px}
+.count b{display:block;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.4rem;color:var(--maroon);line-height:1}
+.count small{color:var(--muted);font-size:.85rem}
+.petal{position:absolute;top:-30px;width:11px;height:16px;background:#fff;border-radius:60% 40% 60% 40%;opacity:.0;
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--gold) 35%,transparent);animation:fall linear infinite}
+@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translate(var(--dx),105vh) rotate(540deg);opacity:0}}
+
+/* sections */
+section{padding:clamp(64px,10vw,110px) 20px}
+.wrap{max-width:880px;margin:0 auto}
+h2{font-size:clamp(2.2rem,5vw,3.2rem);color:var(--maroon);text-align:center}
+.rule{display:block;margin:14px auto 34px;width:150px;height:12px}
+.lead{text-align:center;max-width:620px;margin:0 auto;color:var(--muted);font-size:1.08rem}
+.alt{background:var(--bg2)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s}
+.reveal.in{opacity:1;transform:none}
+
+/* events timeline */
+.tl{position:relative;margin-top:20px;padding-left:34px;border-left:1px solid var(--gold)}
+.ev{position:relative;padding:0 0 38px 8px}
+.ev::before{content:"";position:absolute;left:-43px;top:8px;width:15px;height:15px;transform:rotate(45deg);background:var(--bg2);border:2px solid var(--gold);transition:background .4s}
+.ev.in::before{background:var(--gold)}
+.ev h3{font-size:1.9rem;color:var(--maroon)}
+.ev .when{color:var(--gold);font-weight:500;margin:2px 0 6px}
+.ev p{margin:0;color:var(--muted);max-width:560px}
+.ev.main h3{font-size:2.3rem}
+
+/* details */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:30px}
+.box{background:var(--card);border:1px solid var(--line);padding:26px;position:relative}
+.box::after{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);pointer-events:none}
+.box h3{font-size:1.6rem;color:var(--maroon);margin-bottom:6px}
+.box p{margin:0;color:var(--muted)}
+
+.fam{margin:0 0 34px}.fam .box{text-align:center}
+.formal{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3.4vw,1.85rem);line-height:1.5;color:var(--ink);max-width:680px}
+.couple{display:flex;justify-content:center;align-items:center;gap:clamp(16px,4vw,44px);margin-top:38px;text-align:center;flex-wrap:wrap}
+.couple h3{font-size:clamp(2.2rem,6vw,3.4rem);color:var(--maroon)}
+.couple p{margin:4px 0 0;color:var(--muted);max-width:240px}
+.couple span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.4rem;color:var(--gold)}
+.btn{display:inline-block;margin-top:14px;padding:10px 24px;border:1px solid var(--gold);color:var(--maroon);text-decoration:none;transition:background .3s,color .3s}
+.btn:hover{background:var(--maroon);color:var(--bg)}
+footer{text-align:center;padding:50px 20px calc(50px + env(safe-area-inset-bottom,0px));color:var(--muted)}
+footer h3{font-size:1.8rem;color:var(--maroon)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition:none!important}
+  .petal{display:none}.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <a href="#home">Home</a><a href="#invite">Invitation</a><a href="#events">Events &amp; venues</a>
+</nav>
+
+<header class="hero" id="home">
+  <svg class="toran" viewBox="0 0 800 70" preserveAspectRatio="none" aria-hidden="true" id="toran"></svg>
+  <div>
+    <svg class="kolam" id="kolam" viewBox="-100 -100 200 200" role="img" aria-label="Kolam, a traditional rice-flour floor design"></svg>
+    <h1 class="names">Karthikeyan<span>&amp;</span>Nandhini</h1>
+    <p class="date">Sunday, 15 November 2026</p>
+    <p class="place">L.D.K Malligai Mahal, Patteswaram</p>
+    <p class="place" style="margin-top:30px;margin-bottom:0">Counting down to the muhurtham</p>
+    <div class="count" aria-live="off" style="margin-top:12px">
+      <div><b id="d">0</b><small>days</small></div>
+      <div><b id="h">0</b><small>hours</small></div>
+      <div><b id="m">0</b><small>minutes</small></div>
+      <div><b id="s">0</b><small>seconds</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="invite">
+  <div class="wrap reveal">
+    <h2>With joy &amp; blessings</h2>
+    <svg class="rule" viewBox="0 0 150 12" aria-hidden="true"><path d="M0 6h60M90 6h60" stroke="var(--gold)"/><path d="M75 0l6 6-6 6-6-6z" fill="var(--gold)"/></svg>
+    <div class="grid fam">
+      <div class="box"><h3>Mr. R. Balraj &amp; Mrs. B. Santha</h3><p>Saravanapoigai Street, Swamimalai,<br>Kumbakonam, Thanjavur Dist.</p></div>
+      <div class="box"><h3>Mr. K. Naganathan &amp; Mrs. N. Sarukesi</h3><p>Udaiyar Street, Puducheri, Korrukkai Thottam,<br>Kumbakonam, Thanjavur Dist.</p></div>
+    </div>
+    <p class="lead formal">We cordially invite your esteemed presence and blessings with family on the auspicious occasion of the marriage of their beloved children</p>
+    <div class="couple">
+      <div><h3>Karthikeyan</h3><p>son of Mr. R. Balraj &amp; Mrs. B. Santha</p></div>
+      <span aria-hidden="true">&amp;</span>
+      <div><h3>Nandhini</h3><p>daughter of Mr. K. Naganathan &amp; Mrs. N. Sarukesi</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="alt">
+  <div class="wrap">
+    <h2 class="reveal">Events &amp; venues</h2>
+    <svg class="rule" viewBox="0 0 150 12" aria-hidden="true"><path d="M0 6h60M90 6h60" stroke="var(--gold)"/><path d="M75 0l6 6-6 6-6-6z" fill="var(--gold)"/></svg>
+    <div class="tl">
+      <div class="ev reveal main"><h3>Wedding Function</h3><div class="when">Sunday, 15 November 2026 · 9:00 – 10:30 AM</div><p>L.D.K Malligai Mahal, Patteswaram</p><a class="btn" href="https://maps.app.goo.gl/bt2dGAxptbUYvAxD9" target="_blank" rel="noopener">View on Google Maps</a></div>
+      <div class="ev reveal"><h3>Reception</h3><div class="when">Sunday, 15 November 2026 · 6:30 PM onwards</div><p>Vasantha Mahal, Swamimalai</p><a class="btn" href="https://maps.app.goo.gl/NPCCHVLVjyMsP8NT7" target="_blank" rel="noopener">View on Google Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>Karthikeyan &amp; Nandhini</h3>
+  <p>With best compliments from the families of Mr. R. Balraj and Mr. K. Naganathan</p>
+</footer>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+
+/* Kolam: a pulli (dot) grid with a lotus drawn around it */
+const k=document.getElementById('kolam');
+for(let r=-4;r<=4;r++)for(let c=-4;c<=4;c++){
+  if((Math.abs(r)+Math.abs(c))%2===0&&Math.abs(r)+Math.abs(c)<=4){
+    el('circle',{cx:c*17,cy:r*17,r:1.9,style:'--i:'+(Math.abs(r)+Math.abs(c))},k);}
+}
+const layers=[
+  {n:8,d:'M0 0C14 -18 14 -46 0 -62C-14 -46 -14 -18 0 0Z'},
+  {n:8,d:'M0 -8C26 -30 24 -64 0 -84C-24 -64 -26 -30 0 -8Z',rot:22.5},
+  {n:16,d:'M0 -66C6 -76 6 -88 0 -96C-6 -88 -6 -76 0 -66Z'}
+];
+layers.forEach((L,li)=>{for(let i=0;i<L.n;i++){
+  const p=el('path',{d:L.d,transform:'rotate('+(i*360/L.n+(L.rot||0))+')',style:'--len:260;--i:'+(li*3+i%4+1)},k);
+  try{const l=Math.ceil(p.getTotalLength());p.style.setProperty('--len',l)}catch(e){}
+}});
+el('circle',{cx:0,cy:0,r:4,style:'--i:2'},k);
+
+/* Toran: hanging mango leaves and marigolds */
+const t=document.getElementById('toran');
+el('path',{d:'M0 6Q400 40 800 6',stroke:'var(--gold)','stroke-width':1.5,fill:'none'},t);
+for(let i=0;i<=20;i++){
+  const x=i*40,y=6+34*Math.sin(Math.PI*i/20)*.66+ (i%2?0:0);
+  const g=el('g',{transform:'translate('+x+','+(y+1)+')'},t);
+  const lf=el('g',{class:'leaf',style:'animation-delay:'+(i*.18)+'s'},g);
+  if(i%2===0){el('path',{d:'M0 0C-9 12 -7 26 0 36C7 26 9 12 0 0Z',fill:'var(--leaf)'},lf)}
+  else{el('circle',{cx:0,cy:12,r:7,fill:'var(--gold)'},lf);el('circle',{cx:0,cy:12,r:3,fill:'var(--maroon)'},lf)}
+}
+
+/* Jasmine petals */
+const hero=document.getElementById('home');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  for(let i=0;i<16;i++){
+    const p=document.createElement('i');p.className='petal';
+    p.style.left=Math.random()*100+'%';
+    p.style.setProperty('--dx',(Math.random()*120-60)+'px');
+    p.style.animationDuration=(9+Math.random()*9)+'s';
+    p.style.animationDelay=(Math.random()*12)+'s';
+    hero.appendChild(p);
+  }
+}
+
+/* Countdown to the wedding: 15 Nov 2026, 9:00 AM IST */
+const target=new Date('2026-11-15T09:00:00+05:30').getTime();
+const q=id=>document.getElementById(id);
+function tick(){
+  let s=Math.max(0,Math.floor((target-Date.now())/1000));
+  q('d').textContent=Math.floor(s/86400);
+  q('h').textContent=String(Math.floor(s%86400/3600)).padStart(2,'0');
+  q('m').textContent=String(Math.floor(s%3600/60)).padStart(2,'0');
+  q('s').textContent=String(s%60).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+/* Scroll reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+</script>
+</body>
+</html>
